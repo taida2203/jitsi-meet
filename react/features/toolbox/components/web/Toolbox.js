@@ -1036,17 +1036,17 @@ class Toolbox extends Component<Props, State> {
             <RecordButton
                 key = 'record'
                 showLabel = { true } />,
-            this._shouldShowButton('sharedvideo')
-                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
-                    icon = { IconShareVideo }
-                    key = 'sharedvideo'
-                    onClick = { this._onToolbarToggleSharedVideo }
-                    text = { _sharingVideo ? t('toolbar.stopSharedVideo') : t('toolbar.sharedvideo') } />,
-            this._shouldShowButton('etherpad')
-                && <SharedDocumentButton
-                    key = 'etherpad'
-                    showLabel = { true } />,
+            // this._shouldShowButton('sharedvideo')
+            //     && <OverflowMenuItem
+            //         accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
+            //         icon = { IconShareVideo }
+            //         key = 'sharedvideo'
+            //         onClick = { this._onToolbarToggleSharedVideo }
+            //         text = { _sharingVideo ? t('toolbar.stopSharedVideo') : t('toolbar.sharedvideo') } />,
+            // this._shouldShowButton('etherpad')
+            //     && <SharedDocumentButton
+            //         key = 'etherpad'
+            //         showLabel = { true } />,
             <VideoBlurButton
                 key = 'videobackgroundblur'
                 showLabel = { true }
@@ -1055,39 +1055,39 @@ class Toolbox extends Component<Props, State> {
                 key = 'settings'
                 showLabel = { true }
                 visible = { this._shouldShowButton('settings') } />,
-            <MuteEveryoneButton
-                key = 'mute-everyone'
-                showLabel = { true }
-                visible = { this._shouldShowButton('mute-everyone') } />,
-            this._shouldShowButton('stats')
-                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.speakerStats') }
-                    icon = { IconPresentation }
-                    key = 'stats'
-                    onClick = { this._onToolbarOpenSpeakerStats }
-                    text = { t('toolbar.speakerStats') } />,
-            this._isEmbedMeetingVisible()
-                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.embedMeeting') }
-                    icon = { IconCodeBlock }
-                    key = 'embed'
-                    onClick = { this._onToolbarOpenEmbedMeeting }
-                    text = { t('toolbar.embedMeeting') } />,
-            this._shouldShowButton('feedback')
-                && _feedbackConfigured
-                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.feedback') }
-                    icon = { IconFeedback }
-                    key = 'feedback'
-                    onClick = { this._onToolbarOpenFeedback }
-                    text = { t('toolbar.feedback') } />,
-            this._shouldShowButton('shortcuts')
-                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.shortcuts') }
-                    icon = { IconOpenInNew }
-                    key = 'shortcuts'
-                    onClick = { this._onToolbarOpenKeyboardShortcuts }
-                    text = { t('toolbar.shortcuts') } />,
+            // <MuteEveryoneButton
+            //     key = 'mute-everyone'
+            //     showLabel = { true }
+            //     visible = { this._shouldShowButton('mute-everyone') } />,
+            // this._shouldShowButton('stats')
+            //     && <OverflowMenuItem
+            //         accessibilityLabel = { t('toolbar.accessibilityLabel.speakerStats') }
+            //         icon = { IconPresentation }
+            //         key = 'stats'
+            //         onClick = { this._onToolbarOpenSpeakerStats }
+            //         text = { t('toolbar.speakerStats') } />,
+            // this._isEmbedMeetingVisible()
+            //     && <OverflowMenuItem
+            //         accessibilityLabel = { t('toolbar.accessibilityLabel.embedMeeting') }
+            //         icon = { IconCodeBlock }
+            //         key = 'embed'
+            //         onClick = { this._onToolbarOpenEmbedMeeting }
+            //         text = { t('toolbar.embedMeeting') } />,
+            // this._shouldShowButton('feedback')
+            //     && _feedbackConfigured
+            //     && <OverflowMenuItem
+            //         accessibilityLabel = { t('toolbar.accessibilityLabel.feedback') }
+            //         icon = { IconFeedback }
+            //         key = 'feedback'
+            //         onClick = { this._onToolbarOpenFeedback }
+            //         text = { t('toolbar.feedback') } />,
+            // this._shouldShowButton('shortcuts')
+            //     && <OverflowMenuItem
+            //         accessibilityLabel = { t('toolbar.accessibilityLabel.shortcuts') }
+            //         icon = { IconOpenInNew }
+            //         key = 'shortcuts'
+            //         onClick = { this._onToolbarOpenKeyboardShortcuts }
+            //         text = { t('toolbar.shortcuts') } />,
             this._shouldShowButton('download')
                 && <DownloadButton
                     key = 'download'
@@ -1253,32 +1253,32 @@ class Toolbox extends Component<Props, State> {
             / 2 // divide by the number of groups(left and right group)
         );
 
-        if (this._shouldShowButton('chat')) {
-            buttonsLeft.push('chat');
-        }
+        // if (this._shouldShowButton('chat')) {
+        //     buttonsLeft.push('chat');
+        // }
         if (this._shouldShowButton('desktop')
                 && this._isDesktopSharingButtonVisible()) {
             buttonsLeft.push('desktop');
         }
-        if (this._shouldShowButton('raisehand')) {
-            buttonsLeft.push('raisehand');
-        }
-        if (this._shouldShowButton('closedcaptions')) {
-            buttonsLeft.push('closedcaptions');
-        }
+        // if (this._shouldShowButton('raisehand')) {
+        //     buttonsLeft.push('raisehand');
+        // }
+        // if (this._shouldShowButton('closedcaptions')) {
+        //     buttonsLeft.push('closedcaptions');
+        // }
         if (overflowHasItems) {
             buttonsRight.push('overflowmenu');
         }
         if (this._shouldShowButton('invite')) {
             buttonsRight.push('invite');
         }
-        if (this._shouldShowButton('security') || this._shouldShowButton('info')) {
-            buttonsRight.push('security');
-        }
+        // if (this._shouldShowButton('security') || this._shouldShowButton('info')) {
+        //     buttonsRight.push('security');
+        // }
 
-        if (this._shouldShowButton('tileview')) {
-            buttonsRight.push('tileview');
-        }
+        // if (this._shouldShowButton('tileview')) {
+        //     buttonsRight.push('tileview');
+        // }
         if (this._shouldShowButton('localrecording')) {
             buttonsRight.push('localrecording');
         }

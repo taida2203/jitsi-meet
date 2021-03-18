@@ -104,6 +104,8 @@ class WelcomePage extends AbstractWelcomePage {
             'settings-toolbar-additional-content-template'
         );
 
+        this._isCakapMode = true;
+
         // Bind event handlers so they are only bound once per instance.
         this._onFormSubmit = this._onFormSubmit.bind(this);
         this._onRoomChange = this._onRoomChange.bind(this);
@@ -172,7 +174,7 @@ class WelcomePage extends AbstractWelcomePage {
      */
     render() {
         const { _moderatedRoomServiceUrl, t } = this.props;
-        const { DEFAULT_WELCOME_PAGE_LOGO_URL, DISPLAY_WELCOME_FOOTER } = interfaceConfig;
+        const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
         const showAdditionalCard = this._shouldShowAdditionalCard();
         const showAdditionalContent = this._shouldShowAdditionalContent();
         const showAdditionalToolbarContent = this._shouldShowAdditionalToolbarContent();
@@ -183,13 +185,13 @@ class WelcomePage extends AbstractWelcomePage {
                     ? 'with-content' : 'without-content'}` }
                 id = 'welcome_page'>
                 <div className = 'welcome-watermark'>
-                    <Watermarks defaultJitsiLogoURL = { DEFAULT_WELCOME_PAGE_LOGO_URL } />
+                    <Watermarks defaultJitsiLogoURL = { 'images/logo.png' } />
                 </div>
 
                 <div className = 'header'>
                     <div className = 'welcome-page-settings'>
-                        <SettingsButton
-                            defaultTab = { SETTINGS_TABS.CALENDAR } />
+                        {/* <SettingsButton*/}
+                        {/*    defaultTab = { SETTINGS_TABS.CALENDAR } />*/}
                         { showAdditionalToolbarContent
                             ? <div
                                 className = 'settings-toolbar-content'
@@ -199,12 +201,18 @@ class WelcomePage extends AbstractWelcomePage {
                     </div>
                     <div className = 'header-image' />
                     <div className = 'header-container'>
-                        <h1 className = 'header-text-title'>
-                            { t('welcomepage.headerTitle') }
-                        </h1>
-                        <span className = 'header-text-subtitle'>
-                            { t('welcomepage.headerSubtitle')}
-                        </span>
+                        {/* eslint-disable-next-line no-negated-condition */}
+                        {!this._isCakapMode ? (<div>
+                            <h1 className = 'header-text-title'>
+                                {t('welcomepage.headerTitle')}
+                            </h1>
+                            <span className = 'header-text-subtitle'>
+                                {t('welcomepage.headerSubtitle')}
+                            </span>
+                            {/* eslint-disable-next-line react-native/no-inline-styles */}
+                        </div>) : <div style = {{ height: 150 }} />
+                        }
+
                         <div id = 'enter_room'>
                             <div className = 'enter-room-input-container'>
                                 <form onSubmit = { this._onFormSubmit }>
@@ -271,7 +279,7 @@ class WelcomePage extends AbstractWelcomePage {
                             ref = { this._setAdditionalContentRef } />
                         : null }
                 </div>
-                { DISPLAY_WELCOME_FOOTER && this._renderFooter()}
+                {/* { DISPLAY_WELCOME_FOOTER && this._renderFooter()}*/}
             </div>
 
         );
@@ -396,10 +404,10 @@ class WelcomePage extends AbstractWelcomePage {
         }
 
         if (_recentListEnabled) {
-            tabs.push({
-                label: t('welcomepage.recentList'),
-                content: <RecentList />
-            });
+            // tabs.push({
+            //     label: t('welcomepage.recentList'),
+            //     content: <RecentList />
+            // });
         }
 
         if (tabs.length === 0) {

@@ -71,13 +71,13 @@ class LargeVideo extends Component<Props> {
                 id = 'largeVideoContainer'
                 style = { style }>
                 <Subject />
-                <InviteMore />
+                {/* <InviteMore />*/}
                 <div id = 'sharedVideo'>
                     <div id = 'sharedVideoIFrame' />
                 </div>
                 <div id = 'etherpad' />
 
-                <Watermarks />
+                <Watermarks defaultJitsiLogoURL = { 'images/logo.png' } />
 
                 <div id = 'dominantSpeaker'>
                     <div className = 'dynamic-shadow' />

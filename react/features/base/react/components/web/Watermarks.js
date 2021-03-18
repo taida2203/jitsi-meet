@@ -246,12 +246,12 @@ function _mapStateToProps(state, ownProps) {
             _showJitsiWatermark = !customizationFailed && Boolean(logoImageUrl);
         } else if (defaultBranding) {
             _logoUrl = DEFAULT_LOGO_URL;
-            _logoLink = JITSI_WATERMARK_LINK;
+            _logoLink = 'https://cakap.com' || JITSI_WATERMARK_LINK;
         }
     } else {
         // When there is no custom branding data use defaults
         _logoUrl = ownProps.defaultJitsiLogoURL || DEFAULT_LOGO_URL;
-        _logoLink = JITSI_WATERMARK_LINK;
+        _logoLink = 'https://cakap.com' || JITSI_WATERMARK_LINK;
     }
 
     return {

@@ -146,10 +146,9 @@ export function isJoinByPhoneDialogVisible(state: Object): boolean {
  * @param {Object} state - The state of the app.
  * @returns {boolean}
  */
+// eslint-disable-next-line no-unused-vars
 export function isPrejoinPageEnabled(state: Object): boolean {
-    return navigator.product !== 'ReactNative'
-        && state['features/base/config'].prejoinPageEnabled
-        && !state['features/base/settings'].userSelectedSkipPrejoin;
+    return true;
 }
 
 /**

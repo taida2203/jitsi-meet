@@ -1036,21 +1036,21 @@ class Toolbox extends Component<Props, State> {
             // <RecordButton
             //     key = 'record'
             //     showLabel = { true } />,
-            // this._shouldShowButton('sharedvideo')
-            //     && <OverflowMenuItem
-            //         accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
-            //         icon = { IconShareVideo }
-            //         key = 'sharedvideo'
-            //         onClick = { this._onToolbarToggleSharedVideo }
-            //         text = { _sharingVideo ? t('toolbar.stopSharedVideo') : t('toolbar.sharedvideo') } />,
+            this._shouldShowButton('sharedvideo')
+                && <OverflowMenuItem
+                    accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
+                    icon = { IconShareVideo }
+                    key = 'sharedvideo'
+                    onClick = { this._onToolbarToggleSharedVideo }
+                    text = { _sharingVideo ? t('toolbar.stopSharedVideo') : t('toolbar.sharedvideo') } />,
             // this._shouldShowButton('etherpad')
             //     && <SharedDocumentButton
             //         key = 'etherpad'
             //         showLabel = { true } />,
-            // <VideoBlurButton
-            //     key = 'videobackgroundblur'
-            //     showLabel = { true }
-            //     visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing } />,
+            <VideoBlurButton
+                key = 'videobackgroundblur'
+                showLabel = { true }
+                visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing } />,
             <SettingsButton
                 key = 'settings'
                 showLabel = { true }
@@ -1059,13 +1059,13 @@ class Toolbox extends Component<Props, State> {
             //     key = 'mute-everyone'
             //     showLabel = { true }
             //     visible = { this._shouldShowButton('mute-everyone') } />,
-            // this._shouldShowButton('stats')
-            //     && <OverflowMenuItem
-            //         accessibilityLabel = { t('toolbar.accessibilityLabel.speakerStats') }
-            //         icon = { IconPresentation }
-            //         key = 'stats'
-            //         onClick = { this._onToolbarOpenSpeakerStats }
-            //         text = { t('toolbar.speakerStats') } />,
+            this._shouldShowButton('stats')
+                && <OverflowMenuItem
+                    accessibilityLabel = { t('toolbar.accessibilityLabel.speakerStats') }
+                    icon = { IconPresentation }
+                    key = 'stats'
+                    onClick = { this._onToolbarOpenSpeakerStats }
+                    text = { t('toolbar.speakerStats') } />,
             // this._isEmbedMeetingVisible()
             //     && <OverflowMenuItem
             //         accessibilityLabel = { t('toolbar.accessibilityLabel.embedMeeting') }
@@ -1272,9 +1272,9 @@ class Toolbox extends Component<Props, State> {
         if (this._shouldShowButton('invite')) {
             buttonsRight.push('invite');
         }
-        // if (this._shouldShowButton('security') || this._shouldShowButton('info')) {
-        //     buttonsRight.push('security');
-        // }
+        if (this._shouldShowButton('security') || this._shouldShowButton('info')) {
+            buttonsRight.push('security');
+        }
 
         // if (this._shouldShowButton('tileview')) {
         //     buttonsRight.push('tileview');

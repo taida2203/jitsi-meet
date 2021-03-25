@@ -1253,9 +1253,9 @@ class Toolbox extends Component<Props, State> {
             / 2 // divide by the number of groups(left and right group)
         );
 
-        // if (this._shouldShowButton('chat')) {
-        //     buttonsLeft.push('chat');
-        // }
+        if (this._shouldShowButton('chat')) {
+            buttonsLeft.push('chat');
+        }
         if (this._shouldShowButton('desktop')
                 && this._isDesktopSharingButtonVisible()) {
             buttonsLeft.push('desktop');

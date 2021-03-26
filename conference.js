@@ -1152,7 +1152,7 @@ export default {
                     interfaceConfig.DEFAULT_LOCAL_DISPLAY_NAME);
         }
 
-        return interfaceConfig.DEFAULT_REMOTE_DISPLAY_NAME;
+        return 'Sobat Cakap' || interfaceConfig.DEFAULT_REMOTE_DISPLAY_NAME;
     },
 
     getMyUserId() {
@@ -2009,7 +2009,7 @@ export default {
                     formattedDisplayName:
                         appendSuffix(
                             formattedDisplayName
-                                || interfaceConfig.DEFAULT_REMOTE_DISPLAY_NAME)
+                                || 'Sobat Cakap')
                 });
                 APP.UI.changeDisplayName(id, formattedDisplayName);
             }

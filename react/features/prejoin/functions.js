@@ -33,7 +33,7 @@ export function isDeviceStatusVisible(state: Object): boolean {
  */
 export function isDisplayNameRequired(state: Object): boolean {
     return state['features/prejoin'].isDisplayNameRequired
-        || state['features/base/config'].requireDisplayName;
+        || true;
 }
 
 /**

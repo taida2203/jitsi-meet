@@ -142,7 +142,7 @@ class SpeakerStats extends Component<Props, State> {
         } else {
             displayName
                 = this.state.stats[userId].getDisplayName()
-                    || interfaceConfig.DEFAULT_REMOTE_DISPLAY_NAME;
+                    || 'Sobat Cakap';
         }
 
         return (

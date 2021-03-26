@@ -156,10 +156,10 @@ function AddPeopleDialog({
             <div className = 'invite-more-dialog'>
                 { _inviteContactsVisible && <InviteContactsSection /> }
                 <CopyMeetingLinkSection url = { _inviteUrl } />
-                <InviteByEmailSection
-                    inviteSubject = { inviteSubject }
-                    inviteText = { invite } />
-                { _embedMeetingVisible && <EmbedMeetingTrigger /> }
+                {/*<InviteByEmailSection*/}
+                {/*    inviteSubject = { inviteSubject }*/}
+                {/*    inviteText = { invite } />*/}
+                {/*{ _embedMeetingVisible && <EmbedMeetingTrigger /> }*/}
                 <div className = 'invite-more-dialog separator' />
                 {
                     _liveStreamViewURL
